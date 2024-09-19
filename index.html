@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Geolocalização-GPS</title>
+<!-- CSS -->
+<link rel="stylesheet" href="./css/reset.css">
+<link rel="stylesheet" href="./css/header.css">
+<link rel="stylesheet" href="./css/main.css">
+<link rel="stylesheet" href="./css/footer.css">
+<link rel="stylesheet" href="./css/responsive.css">
+<!-- ICONS -->
+<script src="https://kit.fontawesome.com/f7c21158eb.js" crossorigin="anonymous" defer></script>
+<script src="script.js"></script>
+<style>
+    .form-container {
+        display: flex;
+        align-items: center;
+    }
+    .form-container label {
+        margin-right: 10px;
+    }
+    .form-container input,
+    .form-container select {
+        margin-right: 10px;
+    }
+</style>
+</head>
+<body>
+<header>
+<h1>Sistema de Monitoramneto de Veiculo </h1>
+<nav>
+<a href="https://github.com/zCHICOz" target="_blank">
+<i class="fab fa-github"></i>
+</a>
+<a href="https://www.especialvcoffee.com.br/" target="_blank">
+<i class="fa-solid fa-mug-saucer"></i>
+</a>
+<a href="https://www.youtube.com/c/DevCHICO" target="_blank">
+<i class="fab fa-youtube"></i>
+</a>
+<a href="https://www.instagram.com/dev.chico/" target="_blank">
+<i class="fab fa-instagram"></i>
+</a>
+</nav>
+</header>
+
+<main>
+    <figure>
+        <img src="./img/gps.png" alt="Imagem de Gabriel Ruas">
+        <figcaption>Geolocalização</figcaption>
+    </figure>
+    <section class="main-content">
+    <article class="text">
+    <h2>👨‍💻 Quem Somos </h2>
+    <p>
+        Nosso Sistema de Geolocalização de Veículos proporciona uma maneira eficiente de monitorar sua frota em tempo real. Com uma interface intuitiva, você pode visualizar a posição exata de cada veículo, acompanhar rotas e velocidades, e acessar o histórico de deslocamentos. Isso facilita a gestão e otimiza a eficiência operacional.
+    </p>
+    <p>
+        O sistema permite configurar alertas e notificações personalizados, informando sobre eventos como entrada e saída de zonas ou excesso de velocidade. A busca por veículos específicos pelo número de identificação ou placa é simples e rápida, melhorando a segurança e o controle da frota.
+    </p>
+    <p>
+        Além disso, oferece geração de relatórios detalhados e personalizáveis para obter insights sobre o desempenho dos veículos. Ajuste as configurações conforme suas necessidades e conte com nossa seção de suporte para qualquer assistência. Descubra como nossa solução pode tornar a gestão de frota mais inteligente e eficaz.
+    </p>
+    
+    </article>
+    <aside class="techs">
+    <h2>👨‍💻Selecione seu Relatório</h2>
+    <div class="cards-container">
+    
+    <div class="cards-container2">
+        <!-- Botão para carregar dados do Google Sheets -->
+        <button class="card" onclick="loadSheetData()">
+            <img src="./img/techs/carrega.png" alt="Logo do frente">
+        </button>
+        <p>
+            Carregar botao acima
+        </p>
+        
+        <!-- Formulário para selecionar o nome do veículo e a data -->
+        <form id="reportForm" onsubmit="handleSubmit(event)">
+            <div class="form-container">
+                <label for="vehicleName">Nome do Veículo:</label>
+                <select id="vehicleName" name="vehicleName" required>
+                    <!-- Opções serão preenchidas dinamicamente -->
+                </select>
+                
+                <label for="reportDate">Data:</label>
+                <input type="date" id="reportDate" name="reportDate" required>
+                
+                <button type="button" onclick="searchData()">Pesquisar</button>
+            </div>
+        </form>
+    </div>
+         
+    </div>
+    </aside>
+    </section>
+</main>
+<footer>
+    <span>Prefeitura Municipal de Alterosa - Governo de Todos</span>
+    <div class="cards-container">
+        <div class="card">
+        <img src="./img/techs/web-logo.jpg" alt="Logo do WEB">
+        </div>
+        <div class="card">
+        <img src="./img/techs/css-logo.png" alt="Logo do CSS3">
+        </div>
+        <div class="card">
+        <img src="./img/techs/js-logo.png" alt="Logo do Javascript">
+        </div>
+        <div class="card">
+        <img src="./img/techs/react-logo.png" alt="Logo do React">
+        </div>
+    </div>
+</footer>
+</body>
+</html>
+
+<script>
+    function handleSubmit(event) {
+        event.preventDefault(); // Previne o comportamento padrão do formulário
+        const vehicleName = document.getElementById('vehicleName').value;
+        const reportDate = document.getElementById('reportDate').value;
+        
+        // Chama a função do JavaScript passando os dados do formulário
+        funcaoDoJavaScript(vehicleName, reportDate);
+    }
+
+    function funcaoDoJavaScript(vehicleName, reportDate) {
+        // Lógica para processar os dados recebidos
+        console.log(`Nome do Veículo: ${vehicleName}`);
+        console.log(`Data do Relatório: ${reportDate}`);
+        // Adicione aqui a lógica necessária para gerar o relatório
+    }
+    /////////////////////////////////// select //////////////////////////////////
+async function searchData() {
+    const vehicleName = document.getElementById('vehicleName').value;
+    const reportDate = document.getElementById('reportDate').value;
+
+    if (!vehicleName || !reportDate) {
+        alert('Por favor, selecione um nome de veículo e uma data.');
+        return;
+    }
+
+    try {
+        // Requisição para obter todos os registros
+        const response = await fetch('https://script.google.com/macros/s/AKfycbzYvB9zfP9R400y0iiUnhn9Uqx1q-rbZ1EKLkFG1v_hnl-qj5MqxuInU3vPD8LH2Dsk/exec?action=Read');
+        const data = await response.json();
+
+        // Log para verificar a estrutura dos dados
+        console.log('Dados recebidos:', data);
+
+        // Filtra os dados de acordo com o veículo e a data selecionados
+        const filteredData = data.filter(record => {
+            // Verifica se record.date está presente e é uma string válida
+            if (record.date && typeof record.date === 'string') {
+                try {
+                    // Converte a data ISO para o formato YYYY-MM-DD
+                    const recordDate = new Date(record.date).toISOString().split('T')[0];
+                    return record.nome === vehicleName && recordDate === reportDate;
+                } catch (e) {
+                    console.error('Erro ao converter a data:', e);
+                    return false; // Se houver erro ao converter, exclui o registro
+                }
+            }
+            return false; // Se record.date não estiver presente ou não for uma string válida
+        });
+
+        // Log para verificar dados filtrados
+        console.log('Dados filtrados:', filteredData);
+
+        // Ajuste conforme o formato dos dados
+        const coordinates = filteredData.map(record => ({
+            latitude: record.latitude || record.lat,  // Ajuste conforme o nome correto do campo
+            longitude: record.longitude || record.lon // Ajuste conforme o nome correto do campo
+        }));
+
+        console.log('Coordenadas filtradas:', coordinates);
+        
+        // Construir a string de coordenadas para o URL
+        const coordinatesString = coordinates.map(coord => `${coord.longitude},${coord.latitude}`).join('/');
+        console.log('Coordenadas filtradas:', coordinatesString);
+
+        // Construir o URL do Google Maps com as coordenadas filtradas
+        const url = `https://www.google.com/maps/dir/${coordinatesString}`;
+
+        // Abrir o URL em uma nova aba
+        window.open(url, '_blank');
+
+    } catch (error) {
+        console.error('Erro ao buscar dados:', error);
+    }
+}
+////////////////////////////////// fim select //////////////////////////////
+
+    async function loadSheetData() {
+        try {
+            const response = await fetch('https://script.google.com/macros/s/AKfycbzYvB9zfP9R400y0iiUnhn9Uqx1q-rbZ1EKLkFG1v_hnl-qj5MqxuInU3vPD8LH2Dsk/exec?action=Read');
+            const data = await response.json();
+
+            const vehicleSelect = document.getElementById('vehicleName');
+            const dateSelect = document.getElementById('reportDate');
+
+            vehicleSelect.innerHTML = ''; // Limpa as opções existentes
+            dateSelect.innerHTML = ''; // Limpa as opções existentes
+
+            const uniqueVehicles = new Set();
+            const uniqueDates = new Set();
+
+            data.forEach(record => {
+                uniqueVehicles.add(record.nome);
+                uniqueDates.add(record.datetime.split(' ')[0]);
+            });
+
+            uniqueVehicles.forEach(vehicle => {
+                const optionName = document.createElement('option');
+                optionName.value = vehicle;
+                optionName.text = vehicle;
+                vehicleSelect.appendChild(optionName);
+            });
+
+            uniqueDates.forEach(date => {
+                const optionDate = document.createElement('option');
+                optionDate.value = date;
+                optionDate.text = date;
+                dateSelect.appendChild(optionDate);
+            });
+
+        } catch (error) {
+            console.error('Erro ao carregar dados da planilha:', error);
+        }
+    }
+
+
+
+</script>
