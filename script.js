@@ -108,7 +108,9 @@ try {
 
 
 ////////////////////////////////// fim select //////////////////////////////
-
+addEventListener("DOMContentLoaded", async function() { 
+  loadSheetData();
+}); //carregar informações assim que a página carregar
 async function loadSheetData() {
     try {
         const response = await fetch('https://script.google.com/macros/s/AKfycbzYvB9zfP9R400y0iiUnhn9Uqx1q-rbZ1EKLkFG1v_hnl-qj5MqxuInU3vPD8LH2Dsk/exec?action=Read');
