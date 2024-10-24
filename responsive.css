@@ -50,5 +50,79 @@
     p { font-size: 1rem; }
 
     #logo {  max-width: 200px; }
+    /*LOGIN*/
+    #login_form {
+        width: 90%; 
+        padding: 15px; }
+
+    #logo_login { max-width: 80px; }
+
+    .input-field { padding: 8px; }
+
+    .button { padding: 8px; }
+
+    p { font-size: 14px;  }
 }
 
+/* PADRÃO DO LOGIN*/
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+#container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; 
+}
+
+
+#login_form {
+    width: 400px; 
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #fff;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+
+#logo_login {
+    display: block;
+    margin: 0 auto 20px auto;
+    max-width: 300px; 
+}
+
+.input-box {
+    margin-bottom: 20px;
+}
+
+.input-field {
+    display: flex;
+    align-items: center;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 10px;
+}
+
+.input-field i {
+    margin-right: 10px;
+}
+
+.input-field input {
+    width: 100%;
+    border: none;
+    outline: none;
+}
+
+.button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    border-radius: 4px;
+    cursor: pointer;
+}
