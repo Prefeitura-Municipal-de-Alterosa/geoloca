@@ -23,7 +23,7 @@ body {
     align-items: center;
     justify-content: center;
     height: 100vh;
-    background: url(../img/fundo.png) no-repeat center center fixed;
+    background: url(/geoloca/img/fundo.png) no-repeat center center fixed;
     background-size: cover;
 }
 #container {
@@ -42,13 +42,14 @@ body {
     width: 390px;
     height: 530px;
     border-radius: 8px;
-    gap: 30px;
+    gap: 15px;
 }
 #logo_login {
     width: 100%;
     max-width: 300px;
     margin: 0 auto;
-    margin-top: 5%;
+    margin-top: 2%;
+    margin-bottom: 10px;
 }
 
 #form_header {
@@ -86,7 +87,7 @@ body {
     outline: none;
 }
 
-#button-login, #button-signup {
+#button-login {
     margin-top: 10px;
     border: none;
     background: var(--color-gradient);
