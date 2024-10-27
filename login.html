@@ -20,10 +20,10 @@
             </div>
             <div id="inputs">
                 <div class="input-box">
-                    <label for="name">Nome</label>
+                    <label for="email">Email</label>
                     <div class="input-field">
                         <i class="fa-solid fa-user"></i>
-                        <input type="text" id="name" name="name">
+                        <input type="text" id="email" name="email">
                     </div>
                 </div>
                 <div class="input-box">
@@ -32,24 +32,15 @@
                         <i class="fa-solid fa-key"></i>
                         <input type="password" id="password" name="password">
                     </div>
-                    <div class="button" id="button-login" href = "index.html">
+                    <button onclick="login()" type="button" class="button" id="button-login">
                         Entrar
-                    </div>
-                    <div id="forgot_password">
-                        <a href="#index">
-                            Esqueceu sua senha?
-                        </a>
-                    </div>
-                </div>
+                    </button>
             </div>
+            <p id="loginMessage" style="color: red;"></p>
         </form>
     </main>
-   
-    <script>
-        document.getElementById("button-login").addEventListener("click", function() {
-            window.location.href = "index.html";
-        });
-    </script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
+    <script src="login.js" defer></script>
      
 </body>
 <footer1 class="footer"></footer>
