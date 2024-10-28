@@ -1,10 +1,13 @@
+document.getElementById('bnt').addEventListener('click', function() {
+    location.href = 'cadastro.html';
+});
+
 function doGet(e) {
     var action = e.parameter.action;
   
     switch(action) {
       case "Read":
         return Read(e);
-      // Outras ações...
       default:
         return ContentService.createTextOutput("Invalid action").setMimeType(ContentService.MimeType.TEXT);
     }

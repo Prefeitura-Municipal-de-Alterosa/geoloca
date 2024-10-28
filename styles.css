@@ -164,6 +164,23 @@ button {
     
 }
 
+#bnt:hover {
+    transform: scale(1.05); 
+}
+
+
+#bnt {
+    margin-top: 2%;
+    background: var(--color-gradient);
+    color: white;
+    border: none;
+    border-radius: 50px;
+    font-size: 15px;
+    cursor: pointer;
+    transition: transform 0.3s;
+    float: inline-end;
+}
+
 button:hover {
     transform: scale(1.05);
 }
