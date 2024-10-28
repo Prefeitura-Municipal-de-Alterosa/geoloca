@@ -1,0 +1,127 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400&display=swap');
+* {
+    font-family: 'Poppins', sans-serif;
+}
+
+:root {
+   
+    --color-dark-50: #797984;
+    --color-dark-100: #312d37;
+    --color-dark-900: #000;
+
+    --color-blue-50: #0C2E54;
+    --color-blue-100: #085776;
+    --color-blue-200: #0787A2;
+
+    --color-gradient: linear-gradient(90deg, var(--color-blue-50), var(--color-blue-100), var(--color-blue-200));
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background: url(/geoloca/img/fundo.png) no-repeat center center fixed;
+    background-size: cover;
+}
+#container {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%; 
+    margin: 0 auto;
+    
+}
+#login_form {
+    background-color: white;
+    display: flex;  
+    flex-direction: column;
+    width: 390px;
+    height: 550px;
+    border-radius: 8px;
+    gap: 30px;
+}
+#logo_login {
+    width: 100%;
+    max-width: 300px;
+    margin: 0 auto;
+    margin-top: 5%;
+}
+
+#form_header {
+  width: 100%;
+
+}
+#inputs {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
+   gap: 20px;
+}
+.input-box label {
+    font-size: 14 px;
+    color: var(--color-dark-50);
+
+}
+.input-field {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 3px;
+    cursor: text; 
+    border-bottom: 1px solid var(--color-dark-50);
+}
+.input-field input {
+    border: none;
+    background-color: transparent;
+    width: 260px;
+    font-size: 18px;
+    padding: 0px 5px;
+}
+.input-field input:focus {
+    outline: none;
+}
+
+#button-cadastro, #button-signup {
+    margin-top: 10px;
+    border: none;
+    background: var(--color-gradient);
+    padding: 7px;
+    border-radius: 50px;
+    color: var(--color-light-50);
+    font-weight: bold;
+    font-size: 18px;
+    color: #fff;
+    cursor: pointer;
+    display: block; 
+    width: 100%; 
+}
+
+#forgot_password a {
+    text-decoration: none;
+    color: rgb(148, 148, 163);;
+    font-size: 12px;
+}
+#button-login:hover {
+    transform: scale(1.05);
+}
+
+#forgot_password a:hover {
+    color: rgb(35, 65, 28);
+}
+
+footer1 {
+    background-color: var(--color-blue-50);
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-bottom: 0px;
+    position: fixed;
+    bottom: 0;
+    width: 100%; 
+    padding: 10px 0; 
+}

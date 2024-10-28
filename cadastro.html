@@ -4,44 +4,48 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
-    <link rel="stylesheet" href="styleLogin.css"> 
+    <link rel="stylesheet" href="styleCad.css"> 
     <link rel="stylesheet" href="responsive.css"> 
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" 
     integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" 
     crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <script src="login.js" type="module"></script>
+
+    <script src="register.js" type="module" defer></script>
     
 </head>
 <body>
     <main id="container">
-        <form id="login_form">
+        <form id="login_form" onsubmit="return false;">
             <img src="/geoloca/img/logo.png" alt="logo" id="logo_login">
-            <div id="form_header">
-            
-            </div>
+            <div id="form_header"></div>
             <div id="inputs">
+               
                 <div class="input-box">
                     <label for="email">Email</label>
                     <div class="input-field">
                         <i class="fa-solid fa-user"></i>
-                        <input type="text" id="email" name="email">
+                        <input type="email" id="email" name="email" required>
                     </div>
                 </div>
                 <div class="input-box">
-                    <label for="password">Senha</label>
+                    <label for="senha">Senha</label>
                     <div class="input-field">
                         <i class="fa-solid fa-key"></i>
-                        <input type="password" id="senha" name="senha">
+                        <input type="password" id="senha" name="senha" required>
                     </div>
-                    <button onclick="login()" type="button" class="button" id="button-login">
-                        Entrar
-                    </button>
+                </div>
+                <button type="button" class="button" id="button-cadastro">
+                    Cadastrar
+                </button>
+        
             </div>
             <p id="loginMessage" style="color: red;"></p>
         </form>
     </main>
+    <footer1 class="footer">
+        <p>&copy; 2023 Sistema de Monitoramento de Veículos - Prefeitura Municipal de Alterosa. Todos os direitos reservados.</p>
+    </footer1>
+
+
 </body>
-<footer1 class="footer"></footer>
-     <p1>&copy; 2023 Sistema de Monitoramento de Veículos - Prefeitura Municipal de Alterosa. Todos os direitos reservados.</p>
- </footer1>
 </html>
