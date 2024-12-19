@@ -1,6 +1,6 @@
-document.getElementById('bnt').addEventListener('click', function() {
-    location.href = 'cadastro.html';
-});
+//document.getElementById('bnt').addEventListener('click', function() {
+    //location.href = 'cadastro.html';
+//});
 
 function doGet(e) {
     var action = e.parameter.action;
