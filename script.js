@@ -85,7 +85,7 @@ try {
     // Remoção de coordenadas repetidas ou muito próximas
     const uniqueCoordinates = [];
     let lastCoord = null;
-    const threshold = 0.0001;  // Definir o quão próximas as coordenadas podem ser (ajustável)
+    const threshold = 0.002  // Definir o quão próximas as coordenadas podem ser (ajustável)
 
     coordinates.forEach(coord => {
         if (!lastCoord || Math.abs(coord.latitude - lastCoord.latitude) > threshold || Math.abs(coord.longitude - lastCoord.longitude) > threshold) {
